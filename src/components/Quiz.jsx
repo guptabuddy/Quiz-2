@@ -4,21 +4,21 @@ import quizCompletedImg from "../assets/quiz-complete.png";
 import QuestionTimer from "./QuestionTimer.jsx";
 
 export default function Quiz() {
-	const [answers, setAnswers] = useState([]);
-	const activeQuestionIndex = answers.length;
+	const [userAnswers, setUserAnswers] = useState([]);
+	const activeQuestionIndex = userAnswers.length;
 
 	const quizIsOver = activeQuestionIndex === QUESTIONS.length;
 
-	const handleSelectAnswer = useCallback(function handleSelectAnswer(answer) {
-		setAnswers((prevAnswers) => [...prevAnswers, answer]);
+	const handleSelectAnswer = useCallback(function handleSelectAnswer(selectedAnswer) {
+		setUserAnswers((prevUserAnswers) => [...prevUserAnswers, selectedAnswer]);
 	}, []);
 
 	if (quizIsOver) {
 		return (
-			<>
+			<div id="summary">
 				<img src={quizCompletedImg} alt="Quiz completed" />
 				<h2>You've completed the quiz!</h2>
-			</>
+			</div>
 		);
 	}
 
