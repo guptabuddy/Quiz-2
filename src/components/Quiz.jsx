@@ -47,7 +47,7 @@ export default function Quiz() {
 				questionText={QUESTIONS[activeQuestionIndex].text}
 				answers={QUESTIONS[activeQuestionIndex].answers}
 				answerState={answerState}
-				userAnswers={userAnswers}
+				selectedAnswer={userAnswers[userAnswers.length - 1]}
 				onSelect={handleSelectAnswer}
 			/>
 		</div>

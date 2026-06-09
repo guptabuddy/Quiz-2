@@ -1,6 +1,6 @@
 import { useRef } from "react";
 
-export default function Answers({ answers, answerState, userAnswers, onSelect }) {
+export default function Answers({ answers, answerState, selectedAnswer, onSelect }) {
 	const shuffledAnswers = useRef();
 
 	if (!shuffledAnswers.current) {
@@ -12,11 +12,11 @@ export default function Answers({ answers, answerState, userAnswers, onSelect })
 		<ul id="answers">
 			{shuffledAnswers.current.map((answer) => {
 				let cssClass = "";
-				if (answerState === "answered" && answer === userAnswers[userAnswers.length - 1]) {
+				if (answerState === "answered" && answer === selectedAnswer) {
 					cssClass = "selected";
 				}
 
-				if ((answerState === "correct" || answerState === "wrong") && answer === userAnswers[userAnswers.length - 1]) {
+				if ((answerState === "correct" || answerState === "wrong") && answer === selectedAnswer) {
 					cssClass = answerState;
 				}
 
