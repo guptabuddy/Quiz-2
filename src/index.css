@@ -118,15 +118,35 @@ header h1 {
 	border-radius: 24px;
 }
 
-#question progress.answered {
+/* #question progress.answered {
 	background: #f8e59c;
-}
+} */
 
 #question progress.answered::-webkit-progress-value {
 	background: #f8e59c;
 }
 
 #question progress.answered::-webkit-progress-bar {
+	background: #6a558a;
+}
+
+/* #question progress.correct {
+	background: #5af59d;
+} */
+
+#question progress.correct::-webkit-progress-value {
+	background: #5af59d;
+}
+
+#question progress.answered::-webkit-progress-bar {
+	background: #6a558a;
+}
+
+#question progress.wrong::-webkit-progress-value {
+	background: #f55a98;
+}
+
+#question progress.wrong::-webkit-progress-bar {
 	background: #6a558a;
 }
 

@@ -31,9 +31,17 @@ export default function QuestionAnswer({ questionIndex, onTimeout, onSelectAnswe
 		answerState = answer.isCorrect ? "correct" : "wrong";
 	}
 
+	// We could also merge this timer calculation into the above answerState calculation, as they both use the same logic.
+	let timer = 15000;
+	if (answer.selectedAnswer && answer.isCorrect === null) {
+		timer = 1000;
+	} else if (answer.selectedAnswer && answer.isCorrect !== null) {
+		timer = 2000;
+	}
+
 	return (
 		<div id="question">
-			<QuestionTimer timeout={10000} onTimeout={onTimeout} />
+			<QuestionTimer key={timer} timeout={timer} onTimeout={answer.selectedAnswer === "" ? onTimeout : null} mode={answerState} />
 			<h2>{QUESTIONS[questionIndex].text}</h2>
 			<Answers
 				answers={QUESTIONS[questionIndex].answers}
