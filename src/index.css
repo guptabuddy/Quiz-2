@@ -56,7 +56,7 @@ header h1 {
 	-webkit-text-fill-color: transparent;
 }
 
-#last-try {
+/* #last-try {
 	max-width: 40rem;
 	margin: 2rem auto;
 	font-size: 0.8rem;
@@ -79,7 +79,7 @@ header h1 {
 	gap: 1rem;
 	font-size: 1.25rem;
 	color: #a690c5;
-}
+} */
 
 #quiz {
 	max-width: 50rem;
@@ -213,7 +213,7 @@ header h1 {
 	color: #2c203d;
 }
 
-#skip-action {
+/* #skip-action {
 	margin-top: 2rem;
 }
 
@@ -229,7 +229,7 @@ header h1 {
 #skip-action button:hover,
 #skip-action button:focus {
 	color: #c7bfd6;
-}
+} */
 
 #summary {
 	max-width: 40rem;
